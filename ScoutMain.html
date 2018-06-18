@@ -5,54 +5,64 @@
 				margin: 0px;
 			}
 
+			#bg {
+				background-image: url("camping.jpg");
+				background-attachment: fixed;
+				background-position: center;
+				background-size: cover;
+				min-height: 500px;;
+				text-align: center;
+			}
+
 			#navbar {
-				background-color: #708238;
+				background-color: darkolivegreen;
 				width: 100%;
 				height: 40px;
 			}
 
 			#navbar > h1 {
-				margin: 0px 0 0 16px;
+				margin: 0;
 				color: white;
 				font-weight: bold;
-				text-align: center;
 				font-family: serif;
 				vertical-align: middle;
 			}
 
-			.content {
-				text-align: center;
-				display: table;
+			#firstContainer {
+				margin: 100px, 0, 0, 0px;
 			}
 
-			.content > firstContainer {
-				display: table-cell;
-				padding-top: 1000px;
+
+			button {
+				margin-top: 50px;
+				font-size: 18px;
+				padding: 5px;
+			}
+
+			.h1 {
+				margin: 0px;
+			}
+
+			div {
+				text-align: center;
 			}
 
 			#content1 {
-				width: 50%; height: 25%;
-				float: left;
+				margin-top: 0;
 			}
-
-			#loginForm {
-				width: 50%; height: 25%;
-				float: right;
-			}
-
 		</style>
 	</head>
 	<body>
 		<div id="navbar"><h1>Scout</h1></div>
-		<div id="firstContainer">
+		<div id="bg">
 			<div id="content1">
-				Join now. Adventure awaits.
+				<h1>Adventure awaits.</h1>
+				Join now.
 			</div>
-			<div id="loginForm">
-				<input type="text" placeholder="Username" id="username">
-				<input type="password" placeholder="Password" id="password"><br>
-				<button type="submit">Login</button>
-			</div>
+			<button type="" id="signup">Sign up</button>
+		</div>
+		<div id="donate">
+			<button type="" id="don">DONATE</button>
 		</div>
 	</body>
 </html>

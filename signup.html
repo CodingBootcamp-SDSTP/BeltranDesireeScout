@@ -1,111 +1,116 @@
 <!DOCTYPE html>
 <head>
 	<title>Register</title>
-		<style>
-			body {
-				font-family: Verdana, sans-serif;
-				margin: 0;
-			}
+	<style>
+		body {
+			font-family: Verdana, sans-serif;
+			margin: 0;
+		}
 
-			#header {
-				background-color: #708238;
-				width: 100%;
-				height: 40px;
-			}
+		#header {
+			background-color: darkolivegreen;
+			width: 100%;
+			height: 40px;
+		}
 
-			#header > h1 {
-				margin: 0px 0 0 16px;
-				color: white;
-				text-align: center;
-				font-family: serif;
-				vertical-align: middle;
-			}
+		#header > h1 {
+			margin: 0px 0 0 16px;
+			color: white;
+			text-align: center;
+			font-family: serif;
+			vertical-align: middle;
+		}
 
-			.container {
-				margin: 1cm 0cm 0cm 6cm;
+		#container {
+			margin-top: 30px;
+			text-align: justify;
+		}
 
-			}
+		.lineSeparator {
+			margin-top: 30px;
+			width: 35%;
+			height:1px;
+			background-color:black;
+		}
 
-			#lineSeparator {
-				margin: 30px;
-				height:1px;
-				background-color:black;
-			}
+		#pass {
+			margin-top: 30px;
+			text-align: center;
+		}
 
-			#pass {
-				margin: 30px, 0, 0, 0 ;
-				text-align: center;
-			}
+		#pw {
+			margin: 50px, 0, 0, 0;
+			text-align: center;
+		}
 
-			#pw {
-				margin: 50px, 0, 0, 0 ;
-				text-align: center;
-			}
+		.form-control {
+			margin: 10px;
+		}
 
-			.form-group {
-				text-align: center-left;
-			}
+		.label {
+			display: block;
+			
+		}
 
-		</style>
+		#inside {
+			text-align: left;
+			margin-left: 35%;
+		}
+
+		button {
+			margin-top: 10px;
+		}
+
+		
+	</style>
 </head>
 	<body>
 		<div id="header"><h1>Sign up</h1></div>
-		<div class="container">
-			<form class="form-group">
-			<!--NAME-->
-				<label for="text">Name:</label>
-				<input type="text" class="form-control" id="fName" placeholder="First Name" required>
-				<input type="text" class="form-control" id="mName" placeholder="Middle Name" required>
-				<input type="text" class="form-control" id="lName" placeholder="Last Name" required>
-				<BR><BR>
-			<!--BIRTHDATE-->
-				<label for="date">Birthdate:</label>
-				<input type="date" name="bday" required>
-				&nbsp&nbsp
-			<!--RELIGION-->
-				<label for="text">Religion:</label>
-				<input type="text" class="form-control" id="religion" placeholder="---" required>
-				<BR><BR>
-			<!--SEX-->
-				<label for="text">Sex:</label>
-				<input type="radio" name="gender" value="male" required>Male
-				<input type="radio" name="gender" value="female">Female
-				<BR><BR>
-			<!--OCCUPATION-->
-				<label for="text">Occupation:</label>
-				<input type="text" class="form-control" id="occupation" placeholder="---" required>
-				&nbsp &nbsp
-			<!--NATIONALITY-->
-				<label for="text">Nationality:</label>
-				<input type="text" class="form-control" id="nationality" placeholder="---" required>
-				<BR><BR>
-			<!--ADDRESS-->
-				<label for="text">Address:</label>
-				<input type="text" class="form-control" id="No." placeholder="No." required>
-				<input type="text" class="form-control" id="Street" placeholder="Street" required>
-				<input type="text" class="form-control" id="Brgy" placeholder="Barangay" required>
-				<BR><BR>
-				<input type="text" class="form-control" id="TM" placeholder="Town/Municipality" required>
-				<input type="text" class="form-control" id="PC" placeholder="Province/City" required>
-				<input type="text" class="form-control" id="Zcode" placeholder="Zip Code" required>
-				<BR><BR>
-			<!--NUMBER-->
-				<label for="tel">Phone Number:</label>
-				<input type="tel" class="form-control" id="PN" placeholder="+__-______-____" value="+" required>
-			<!--EMAIL-->
-				<label for="email">Email:</label>
-				<input type="email" class="form-control" id="email" placeholder="Enter email" required>
+		<div id="container"><center>
+			<div id="inside">
+				<form>
+					<label for="text">Name:</label>
+					<input type="text" class="form-control" id="name" placeholder="Name" size="40px" required>
+				</form>
+				<form>
+					<label for="text">Address:</label>
+					<input type="text" class="form-control" id="address" placeholder="Address" size="40px" required>
+				</form>
+				<form>
+					<label for="number">Phone Number:</label>
+					<input type="tel" class="form-control" id="number" required>
+				</form>
+				<form>
+					<label for="email">Email:</label>
+					<input type="email" class="form-control" id="email" placeholder="Email" required>
+				</form>
+				<form>
+					<label for="date">Birthdate:</label>
+					<input type="date" class="form-control" name="bday" required>
+				</form>
+				<form>
+					<label for="text">Sex:</label>
+					<input type="radio" class="form-control" name="gender" value="male">Male
+					<input type="radio" class="form-control" name="gender" value="female">Female
+				</form>
+				<form>
+					<label for="xp">Experience as a camper:</label><BR>
+					<input type="text" name="xp" size="55">
+				</form>
+			</div>
+			<div class="lineSeparator"></div>
+			<form>
+				<p><b>Contact Person in case of Emergency</b></p>
+				<input type="text" class="form-control" id="cpname" placeholder="Name" required>
+				<input type="text" class="form-control" id="cpnum" placeholder="Phone number" required>
 			</form>
-		</div>
-		<div id="lineSeparator"></div>
-		<div id="pass">SET PASSWORD FOR ACCOUNT</div><BR>
-		<!--BOTTOM PART-->
-		<form id="pw">
-			<input type="password" placeholder="Enter Password" id="pwd1" required>
-			<BR><BR>
-			<input type="password" placeholder="Re-enter Password" id="pwd2" required>
-			<BR><BR>
+			<div class="lineSeparator"></div>
+			<div id="pass">SET PASSWORD FOR ACCOUNT</div><BR>
+			<form id="pw">
+				<input type="password" class="form-control" placeholder="Enter Password" id="pwd1" required>
+				<input type="password" class="form-control" placeholder="Re-enter Password" id="pwd2" required>
+			</form>
 			<button type="submit" class="pwSubmit">Submit</button>
-		</form>
+	</center></div>
 	</body>
 </html>
