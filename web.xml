@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<web-app>
+	<display-name>Servlet Sample</display-name>
+	<description>Sample App</description>
+	<servlet>
+		<servlet-name>All Assets</servlet-name>
+		<servlet-class>AllAssetsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>All Assets</servlet-name>
+		<url-pattern>/assets</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Add Asset</servlet-name>
+		<servlet-class>AddAssetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add Asset</servlet-name>
+		<url-pattern>/addasset</url-pattern>
+	</servlet-mapping>
+</web-app>

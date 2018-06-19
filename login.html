@@ -1,17 +1,36 @@
 <!DOCTYPE HTML>
 	<head><title>Login</title>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+		<script>
+			window.onload = function() {
+				document.getElementById("login").onclick = function() {
+					let rq = new XMLHttpRequest();
+					rq.onreadystatechange = function() {
+						if(rq.readyState == 4) {
+							alert("Saved");
+						}
+					};
+					rq.open("POST", "/messages", true);
+					rq.setRequestHeader("Content-Type", "application/json");
+					rq.send(JSON.stringify({
+						message : document.getElementById('message').value,
+					}));
+				};
+			};
+		</script>
 		<style>
 			body {
 				background: url("pine.jpg") no-repeat;
+				background-color:rgb(9, 24, 1);
 				background-size: cover;
 				font-family: 'Roboto', sans-serif;
 			}
 
 			.container {
 				background: rgba(255, 255, 255, 0.5);
-				width: 800px;
-				margin: 0 auto;
+				width: 400px;
+				margin-top: 5%;
+				margin-bottom: 40px;
 				padding: 20px;
 				box-shadow: 2px 2px 10px 2px #7f8c8d;
 			}
@@ -43,6 +62,7 @@
 				align-items: center;
 				z-index: 2;
 			}
+
 			.form {
 				display: flex;
 				flex-direction: column;
@@ -54,8 +74,8 @@
 			.form input, .form button {
 				outline: none;
 				padding: 8px 15px;
-				margin-bottom: 5px;
-				border: 1px solid #27ae60;
+				margin-bottom: 10px;
+				border: none;
 			}
 
 			.form button {
@@ -66,6 +86,7 @@
 
 			.form button:hover {
 				cursor: pointer;
+				background: #63bb88;
 			}
 
 			::-webkit-input-placeholder {
@@ -74,16 +95,19 @@
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<center><div class="container">
 			<div class="inner">
-				<h1>Login</h1>
+				<h1>Scout</h1>
 				<div><img src="logohaha.png"></div>
-				<div class="form">
-					<input type="text" placeholder="Username" id="username" required>
-					<input type="password" placeholder="Password" id="pw" required>
-					<button type="submit">Submit</button>
-				</div>
+				<form method="POST">
+					<div class="form">
+						<input type="text" placeholder="Email" id="username" required>
+						<input type="email" placeholder="Password" id="pw" required>
+						<button type="submit" id="login">Login</button>
+					</div>
+				</form>
 			</div>
 		</div>
+	</center>
 	</body>
 </html>

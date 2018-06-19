@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <head>
 	<title>Register</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	<script>
+		var gen;
+		window.onload = function() {
+			document.getElementById("submit").onclick = function() {
+				var fn = document.getElementById("fName").value;
+				var ln = document.getElementById("lName").value;
+				console.log(fn + " " + ln);
+				console.log(document.getElementById("address").value);
+				console.log(document.getElementById("number").value);
+				console.log(document.getElementById("email").value);
+				console.log(document.getElementById("bday").value);
+				console.log(gen);
+				console.log(document.getElementById("xp").value);
+				console.log(document.getElementById("cpname").value);
+				console.log(document.getElementById("cpnum").value);
+				console.log(document.getElementById("pw1").value);
+				console.log(document.getElementById("pw2").value);
+			};
+		};
+		
+		function getData(gender) {
+			gen = gender;
+		}
+	</script>
 	<style>
 		body {
-			font-family: Verdana, sans-serif;
+			font-family: 'Roboto', sans-serif;
 			margin: 0;
 		}
 
@@ -22,95 +47,93 @@
 		}
 
 		#container {
-			margin-top: 30px;
-			text-align: justify;
+			background: rgba(255, 255, 255, 0.5);
+			width: 600px;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			padding-top: 50px;
+			padding-bottom: 60px;	
+			box-shadow: 2px 2px 10px 2px #7f8c8d;
 		}
 
 		.lineSeparator {
 			margin-top: 30px;
-			width: 35%;
+			width: 45%;
 			height:1px;
 			background-color:black;
 		}
 
-		#pass {
-			margin-top: 30px;
-			text-align: center;
-		}
-
-		#pw {
-			margin: 50px, 0, 0, 0;
-			text-align: center;
-		}
-
-		.form-control {
-			margin: 10px;
-		}
-
-		.label {
-			display: block;
-			
-		}
-
-		#inside {
-			text-align: left;
-			margin-left: 35%;
+		.signupform {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding: 5px;
 		}
 
 		button {
 			margin-top: 10px;
+			border: none;
+			padding: 5px;
+			width: 30%;
+			outline: none;
+			background: #27ae60;
+			color: #fff;
+			text-transform: uppercase;
 		}
 
-		
+		button:hover {
+			cursor: pointer;
+			background: #63bb88;
+		}
 	</style>
 </head>
 	<body>
 		<div id="header"><h1>Sign up</h1></div>
-		<div id="container"><center>
-			<div id="inside">
+		<center><div id="container">
+			<center><div class="content">
 				<form>
-					<label for="text">Name:</label>
-					<input type="text" class="form-control" id="name" placeholder="Name" size="40px" required>
+					<label for="text">Name:</label><br>
+					<input type="text" class="signupform" id="fName" placeholder="first name" size="20px" required>
+					<input type="text" class="signupform" id="lName" placeholder="last name" size="20px" required>
 				</form>
 				<form>
-					<label for="text">Address:</label>
-					<input type="text" class="form-control" id="address" placeholder="Address" size="40px" required>
+					<label for="text">Address:</label><br>
+					<input type="text" class="signupform" id="address" placeholder="address" size="47px" required>
 				</form>
 				<form>
-					<label for="number">Phone Number:</label>
-					<input type="tel" class="form-control" id="number" required>
+					<label for="number">Phone number:</label>
+					<input type="tel" class="signupform" id="number" placeholder="number" size="24px" required>
 				</form>
 				<form>
 					<label for="email">Email:</label>
-					<input type="email" class="form-control" id="email" placeholder="Email" required>
+					<input type="email" class="signupform" id="email" placeholder="email" required>
 				</form>
 				<form>
 					<label for="date">Birthdate:</label>
-					<input type="date" class="form-control" name="bday" required>
+					<input type="date" class="signupform" id="bday" required>
 				</form>
 				<form>
 					<label for="text">Sex:</label>
-					<input type="radio" class="form-control" name="gender" value="male">Male
-					<input type="radio" class="form-control" name="gender" value="female">Female
+					<input type="radio" class="signupform" name="gender" value="male" onclick="getData(this.value)" required>Male
+					<input type="radio" class="signupform" name="gender" value="female" onclick="getData(this.value)" required>Female
 				</form>
+				<div class="lineSeparator"></div>
 				<form>
-					<label for="xp">Experience as a camper:</label><BR>
-					<input type="text" name="xp" size="55">
+					<p><label for="xp">Experience as a camper:</label><p>
+					<input type="text" class="signupform" id="xp" size="55">
 				</form>
-			</div>
-			<div class="lineSeparator"></div>
-			<form>
-				<p><b>Contact Person in case of Emergency</b></p>
-				<input type="text" class="form-control" id="cpname" placeholder="Name" required>
-				<input type="text" class="form-control" id="cpnum" placeholder="Phone number" required>
-			</form>
-			<div class="lineSeparator"></div>
-			<div id="pass">SET PASSWORD FOR ACCOUNT</div><BR>
-			<form id="pw">
-				<input type="password" class="form-control" placeholder="Enter Password" id="pwd1" required>
-				<input type="password" class="form-control" placeholder="Re-enter Password" id="pwd2" required>
-			</form>
-			<button type="submit" class="pwSubmit">Submit</button>
-	</center></div>
+				<div class="lineSeparator"></div>
+				<form>
+					<p><b>Contact Person in case of Emergency</b></p>
+					<input type="text" class="signupform" id="cpname" placeholder="name" required>
+					<input type="text" class="signupform" id="cpnum" placeholder="phone number" required>
+				</form>
+				<div class="lineSeparator"></div>
+				<form>
+					<p>SET PASSWORD FOR ACCOUNT</p>
+					<input type="password" class="signupform" placeholder="enter password" id="pw1" required><br>
+					<input type="password" class="signupform" placeholder="re-enter password" id="pw2" required><br>
+				</form>
+				<button type="submit" id="submit" onclick="getData()">Submit</button>
+		</div></center>
 	</body>
 </html>
