@@ -8,20 +8,30 @@
 			document.getElementById("submit").onclick = function() {
 				var fn = document.getElementById("fName").value;
 				var ln = document.getElementById("lName").value;
-				console.log(fn + " " + ln);
-				console.log(document.getElementById("address").value);
-				console.log(document.getElementById("number").value);
-				console.log(document.getElementById("email").value);
-				console.log(document.getElementById("bday").value);
-				console.log(gen);
-				console.log(document.getElementById("xp").value);
-				console.log(document.getElementById("cpname").value);
-				console.log(document.getElementById("cpnum").value);
-				console.log(document.getElementById("pw1").value);
-				console.log(document.getElementById("pw2").value);
-			};
+				// console.log(fn + " " + ln);
+				var address = document.getElementById("address").value;
+				var number = document.getElementById("number").value;
+				var email = document.getElementById("email").value;
+				var bday = document.getElementById("bday").value;
+				// console.log(gen);
+				var xp = document.getElementById("xp").value;
+				var cpnum = document.getElementById("cpname").value;
+				var cpnum = document.getElementById("cpnum").value;
+				var pw1 = document.getElementById("pw1").value;
+				var pw2 = document.getElementById("pw2").value;
+
+				let rq = new XMLHttpRequest();
+				rq.onreadystatechange = function() {
+					if(rq.readyState == 4) {
+						console.log("successful");
+					}
+				}
+				rq.open("POST", "/signup", true);
+				rq.setRequestHeader("Content-Type", "application/x-www-");
+				rq.send("username="+username+"&password="+pass);
+			}
 		};
-		
+
 		function getData(gender) {
 			gen = gender;
 		}

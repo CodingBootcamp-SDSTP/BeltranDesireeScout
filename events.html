@@ -1,8 +1,83 @@
-<html>
-	<head><title>Events</title></head>
+<!DOCTYPE html>
+<head>
+	<title>Register</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	<script>
+	</script>
 	<style>
+		body {
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+		}
+
+		#header {
+			background-color: darkolivegreen;
+			width: 100%;
+			height: 40px;
+		}
+
+		#header > h1 {
+			margin: 0px 0 0 16px;
+			color: white;
+			text-align: center;
+			font-family: serif;
+			vertical-align: middle;
+		}
+
+		#container {
+			background: rgba(255, 255, 255, 0.5);
+			width: 600px;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			padding-top: 50px;
+			padding-bottom: 60px;	
+			box-shadow: 2px 2px 10px 2px #7f8c8d;
+		}
+
+		.lineSeparator {
+			margin-top: 30px;
+			width: 45%;
+			height:1px;
+			background-color:black;
+		}
+
+		.signupform {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding: 5px;
+		}
+
+		button {
+			margin-top: 10px;
+			border: none;
+			padding: 5px;
+			width: 30%;
+			outline: none;
+			background: #27ae60;
+			color: #fff;
+			text-transform: uppercase;
+		}
+
+		button:hover {
+			cursor: pointer;
+			background: #63bb88;
+		}
 	</style>
+</head>
 	<body>
-		
+		<div id="header"><h1>Events</h1></div>
+		<center><div id="container">
+			<h2>Title:</h2>
+			<p id="tContainer"></p>
+			<p>Location:</p>
+			<p id="locContainer"></p>
+			<p>Date:</p>
+			<p id="dateContainer"></p>
+			<p>Description:</p>
+			<p id="descContainer"></p>
+			<p>Payment:</p>
+			<p id="pContainer"></p>
+			<button type="submit" id="join">Join</button>
+		</div></center>
 	</body>
 </html>
