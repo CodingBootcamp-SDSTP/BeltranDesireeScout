@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<web-app>
+	<display-name>Scout Servlet</display-name>
+	<description>Sign up</description>
+	<servlet>
+		<servlet-name>signup</servlet-name>
+		<servlet-class>ScoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>signup</servlet-name>
+		<url-pattern>/signup</url-pattern>
+	</servlet-mapping>
+</web-app>

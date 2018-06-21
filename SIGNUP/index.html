@@ -6,8 +6,8 @@
 		var gen;
 		window.onload = function() {
 			document.getElementById("submit").onclick = function() {
-				var fn = document.getElementById("fName").value;
-				var ln = document.getElementById("lName").value;
+				var fName = document.getElementById("fName").value;
+				var lName = document.getElementById("lName").value;
 				// console.log(fn + " " + ln);
 				var address = document.getElementById("address").value;
 				var number = document.getElementById("number").value;
@@ -15,7 +15,7 @@
 				var bday = document.getElementById("bday").value;
 				// console.log(gen);
 				var xp = document.getElementById("xp").value;
-				var cpnum = document.getElementById("cpname").value;
+				var cpname = document.getElementById("cpname").value;
 				var cpnum = document.getElementById("cpnum").value;
 				var pw1 = document.getElementById("pw1").value;
 				var pw2 = document.getElementById("pw2").value;
@@ -27,7 +27,8 @@
 					}
 				}
 				rq.open("POST", "/signup", true);
-				rq.setRequestHeader("Content-Type", "application/x-www-");
+				rq.setRequestHeader("Content-Type", "text/html");
+				// rq.setRequestHeader("Content-Type", "application/x-www-");
 				rq.send("username="+username+"&password="+pass);
 			}
 		};
@@ -100,50 +101,51 @@
 		<div id="header"><h1>Sign up</h1></div>
 		<center><div id="container">
 			<center><div class="content">
-				<form>
+				<form method="POST" action="register">
 					<label for="text">Name:</label><br>
 					<input type="text" class="signupform" id="fName" placeholder="first name" size="20px" required>
 					<input type="text" class="signupform" id="lName" placeholder="last name" size="20px" required>
 				</form>
-				<form>
+				<form method="POST" action="register">
 					<label for="text">Address:</label><br>
 					<input type="text" class="signupform" id="address" placeholder="address" size="47px" required>
 				</form>
-				<form>
+				<form method="POST" action="register">
 					<label for="number">Phone number:</label>
 					<input type="tel" class="signupform" id="number" placeholder="number" size="24px" required>
 				</form>
-				<form>
+				<form method="POST" action="register">
 					<label for="email">Email:</label>
 					<input type="email" class="signupform" id="email" placeholder="email" required>
 				</form>
-				<form>
+				<form method="POST" action="register">
 					<label for="date">Birthdate:</label>
 					<input type="date" class="signupform" id="bday" required>
 				</form>
-				<form>
+				<form method="POST" action="register">
 					<label for="text">Sex:</label>
 					<input type="radio" class="signupform" name="gender" value="male" onclick="getData(this.value)" required>Male
 					<input type="radio" class="signupform" name="gender" value="female" onclick="getData(this.value)" required>Female
 				</form>
 				<div class="lineSeparator"></div>
-				<form>
+				<form method="POST" action="register">
 					<p><label for="xp">Experience as a camper:</label><p>
 					<input type="text" class="signupform" id="xp" size="55">
 				</form>
 				<div class="lineSeparator"></div>
-				<form>
+				<form method="POST" action="register">
 					<p><b>Contact Person in case of Emergency</b></p>
 					<input type="text" class="signupform" id="cpname" placeholder="name" required>
 					<input type="text" class="signupform" id="cpnum" placeholder="phone number" required>
 				</form>
 				<div class="lineSeparator"></div>
-				<form>
+				<form method="POST" action="register">
 					<p>SET PASSWORD FOR ACCOUNT</p>
 					<input type="password" class="signupform" placeholder="enter password" id="pw1" required><br>
 					<input type="password" class="signupform" placeholder="re-enter password" id="pw2" required><br>
 				</form>
-				<button type="submit" id="submit" onclick="getData()">Submit</button>
+				<!-- <button type="submit" id="register" onclick="getData()">Submit</button> -->
+				<button type="submit" id="register">Submit</button>
 		</div></center>
 	</body>
 </html>
